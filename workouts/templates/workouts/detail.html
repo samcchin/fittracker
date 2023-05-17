@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Workout Routine
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="workout-detail">
+        <h1>{{ workout_detail.date|date:"l, M j, Y" }} : {{ workout_detail.workout_type }} Routine</h1>
+        <p>{{ workout_detail.notes }}</p>
+        <h2>Routine</h2>
+        <p><a href="{% url 'create_exercise' %}">Add an exercise</a></p>
+        {% if workout_detail.exercises.all|length > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Weight</th>
+                    <th>Is completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exercise in workout_detail.exercises.all %}
+                <tr>
+                    <td>{{ exercise.exercise_type }}</td>
+                    <td>{{ exercise.sets }}</td>
+                    <td>{{ exercise.reps }}</td>
+                    <td>{{ exercise.weight }}</td>
+                    <td>{{ exercise.completed|yesno:"✅,❌" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>This workout has no exercises</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Exercises
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="my-exercises-list">
+        <h1>My Exercises</h1>
+        {% if exercises_lists|length > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Exercise Type</th>
+                    <th>Set</th>
+                    <th>Reps</th>
+                    <th>Weight</th>
+                    <th>Completion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exercise in exercises_lists %}
+                <tr>
+                    <td>{{ exercise.exercise_type }}</td>
+                    <td>{{ exercise.sets }}</td>
+                    <td>{{ exercise.reps }}</td>
+                    <td>{{ exercise.weight }}</td>
+                    <td>{{ exercise.completed|yesno:"✅,❌" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>You have no exercises</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}

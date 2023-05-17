@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600&display=swap');
+
+/* Set all elements to use the Open Sans font */
+body, input, textarea, button, select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the background color of all pages */
+html, body {
+  background-color: #EFF5F5;
+}
+
+/* Set the style of the navigation list */
+header nav ul {
+  background-color: white;
+  border-bottom: 1px solid #CCC;
+  box-sizing: border-box;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 2em;
+  padding: 0 0 0 1em;
+}
+
+/* Set the spacing and layout of the nav list items */
+header nav ul li {
+  display: inline-block;
+  position: right;
+  margin: 0 1em;
+  padding: 1em 0 1em 0;
+}
+
+/* Set the style of the links in the nav */
+header nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Make the input tags look nicer */
+input {
+  height: 1.5em;
+  margin: 0;
+  padding: .25em .5em;
+}
+
+/* Make the select boxes look nicer */
+select {
+  height: 2.5em;
+}
+
+/* Make the select-multiple boxes look nicer */
+select[multiple] {
+  height: 7.5em;
+}
+
+/* Make the textarea inputs look nicer */
+textarea {
+  margin: 0;
+  padding: .25em .5em;
+}
+
+/* Set the width on all tables */
+table {
+  width: 100%;
+}
+
+/* Set the size of the help text in forms */
+.helptext {
+  display: block;
+  font-size: 80%;
+}
+
+/* Make the login and sign-up forms look nicer */
+.login-form,
+.signup-form,
+.fasting-log-entry {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 400px;
+  padding: 2em;
+}
+
+/* Make the task and projects forms look nicer */
+.exercise-form,
+.workout-form {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 600px;
+  padding: 2em;
+}
+
+/* Make all of the headers the same */
+.exercise-form h1,
+.login-form h1,
+.signup-form h1,
+.workout-list h1,
+.workout-form h1,
+.workout-detail h1,
+.my-exercises-list h1 {
+  font-family:'Work Sans', sans-serif;
+  color: #0D3642;
+  margin-top: 0;
+}
+
+/* Add spacing to the section of the project detail */
+.workout-detail h2 {
+  margin-top: 2em;
+}
+
+/* Standardize form layout using grid */
+.exercise-form p,
+.login-form p,
+.signup-form p,
+.workout-form p {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+  grid-template-columns: 100px 1fr;
+}
+
+/* Standardize help text positions in the grid */
+.exercise-form p .helptext,
+.login-form p .helptext,
+.signup-form p .helptext,
+.workout-form p .helptext {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/* Make the buttons a little larger */
+.exercise-form button,
+.my-exercises-list button,
+.login-form button,
+.signup-form button,
+.workout-form button,
+.fasting-log-entry button,
+.fasting-home p button {
+    background-color: #217066;
+    border-radius: 999px;
+    box-shadow: #CDDEB4 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    padding: 0.25em 1em;
+}
+
+
+/* Add a nice box around the lists and details */
+.my-exercises-list,
+.workout-list,
+.workout-detail {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  padding: 2em;
+}
+
+/* Add padding to the table header and table datum tags */
+.my-exercises-list th,
+.my-exercises-list td,
+.workout-list th,
+.workout-list td,
+.workout-detail th,
+.workout-detail td {
+  padding: .5em;
+}
+
+/* Add a bottom border to the table header tags */
+.my-exercises-list thead tr th,
+.workout-list thead tr th,
+.workout-detail thead tr th {
+  border-bottom: 2px solid #DEDEDE;
+}
+
+/* Center align the text on specific table header cells */
+.my-exercises-list tbody td:nth-child(2),
+.my-exercises-list tbody td:nth-child(3),
+.my-exercises-list tbody td:nth-child(4),
+.workout-list tbody tr td,
+.workout-detail tbody td:nth-child(2),
+.workout-detail tbody td:nth-child(3),
+.workout-detail tbody td:nth-child(4),
+.workout-detail tbody td:nth-child(5) {
+  text-align: center;
+}
+
+/* Add horizontal rules to all rows except the last */
+.my-exercises-list tbody :not(tr:last-child) td,
+.workout-list tbody :not(tr:last-child) td,
+.workout-detail tbody :not(tr:last-child) td {
+  border-bottom: 1px solid #DEDEDE;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #0D3642;
+   }

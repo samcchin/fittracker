@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Workouts
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="workout-list">
+        <h1>My Workouts</h1>
+        <p><a href="{% url 'create_workout' %}">Create a new workout</a></p>
+        {% if list_workouts|length == 0 %}
+        <p>You have no workouts</p>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Workout</th>
+                    <th>Date</th>
+                    <th>Workout Type</th>
+                    <th>Number of exercises</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for workout in list_workouts %}
+                <tr>
+                    <td><a href="{% url 'show_workout' workout.id %}">{{ workout.date|date:"l" }} {{ workout.workout_type }} Routine</a></td>
+                    <td> {{ workout.date|date:"M j, Y" }} </td>
+                    <td> {{ workout.workout_type }}</td>
+                    <td> {{ workout.exercise_count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}
